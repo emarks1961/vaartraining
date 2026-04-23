@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta property="og:image" content="data:image/webp;base64,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" />
+<meta name="twitter:image" content="data:image/webp;base64,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" />
+<title>Beoordeling Vaartraining — de Fietsboot</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --accent:       #008AD1;
+  --accent-dark:  #006ea8;
+  --accent-light: #e6f3fb;
+  --bg:           #f7f8fa;
+  --card:         #ffffff;
+  --border:       #e4e7ed;
+  --text:         #1a1d23;
+  --text-2:       #5a6070;
+  --text-3:       #9aa0ad;
+  --ok-bg:        #edfaf3;
+  --ok:           #1a7f4b;
+  --err-bg:       #fef2f2;
+  --err:          #c0392b;
+  --warn-bg:      #fffbeb;
+  --warn:         #92620a;
+  --r:            10px;
+  --rl:           16px;
+  --shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.07);
+}
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.header {
+  width: 100%; max-width: 560px;
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 2rem;
+}
+.header img { width: 44px; height: 44px; border-radius: 12px; display: block; flex-shrink: 0; }
+.header h1  { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.header p   { font-size: 13px; color: var(--text-2); margin-top: 1px; }
+
+.card {
+  width: 100%; max-width: 560px;
+  background: var(--card);
+  border-radius: var(--rl);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.prog      { height: 3px; background: var(--border); }
+.prog-fill { height: 100%; background: var(--accent); transition: width .4s ease; border-radius: 0 2px 2px 0; }
+
+.sh { padding: 1.5rem 1.75rem 0; }
+.sh-lbl   { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.sh-title { font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
+.sh-sub   { font-size: 13px; color: var(--text-2); margin-top: 4px; }
+.sb { padding: 1.5rem 1.75rem 1.75rem; }
+
+.step        { display: none; }
+.step.active { display: block; }
+
+.field { margin-bottom: 1rem; }
+.field label {
+  display: block; font-size: 13px; font-weight: 500;
+  color: var(--text-2); margin-bottom: 6px;
+}
+.field input,
+.field textarea,
+.field select {
+  width: 100%; padding: 10px 13px;
+  border: 1px solid var(--border); border-radius: var(--r);
+  font-family: inherit; font-size: 15px; color: var(--text);
+  background: var(--bg); transition: border-color .15s; resize: vertical;
+}
+.field textarea { min-height: 80px; }
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,138,209,.12); background: #fff;
+}
+
+/* Two-column grid for training data */
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+@media (max-width: 480px) { .field-grid { grid-template-columns: 1fr; } }
+
+/* Criteria radio table */
+.criteria-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+.criteria-table th {
+  text-align: left; font-size: 11px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-3); padding: 0 8px 8px;
+}
+.criteria-table th:last-child { text-align: center; }
+.criteria-table td {
+  padding: 9px 8px; font-size: 14px;
+  border-top: 1px solid var(--border); vertical-align: middle;
+}
+.criteria-table tr:first-child td { border-top: none; }
+.criteria-table td:first-child { font-weight: 500; color: var(--text); width: 55%; }
+.radio-group { display: flex; gap: 18px; justify-content: center; }
+.radio-group label {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px; font-size: 11px; font-weight: 600;
+  color: var(--text-3); cursor: pointer;
+}
+.radio-group input[type="radio"] { accent-color: var(--accent); width: 17px; height: 17px; }
+.radio-group label:has(input:checked) { color: var(--accent); }
+
+/* Conclusion radio buttons */
+.conclusie-group { display: flex; flex-direction: column; gap: 8px; }
+.conclusie-opt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px; border-radius: var(--r);
+  border: 1px solid var(--border); background: var(--bg);
+  cursor: pointer; font-size: 14px; font-weight: 500;
+  transition: all .12s;
+}
+.conclusie-opt:has(input:checked) {
+  border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark);
+}
+.conclusie-opt input { accent-color: var(--accent); }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+.section-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+}
+
+/* Preview panel */
+.preview-panel {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.25rem 1.5rem;
+  font-size: 13px; line-height: 1.7; margin-bottom: 1.25rem;
+}
+.preview-panel h3 { font-size: 15px; font-weight: 600; margin-bottom: .75rem; color: var(--text); }
+.preview-row { display: flex; gap: 8px; margin-bottom: 3px; }
+.preview-row .lbl { color: var(--text-3); min-width: 130px; flex-shrink: 0; }
+.preview-row .val { color: var(--text); font-weight: 500; }
+.preview-criteria { margin-top: .75rem; }
+.preview-criteria .cr-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+}
+.preview-criteria .cr-row:last-child { border-bottom: none; }
+.cr-badge {
+  padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+}
+.cr-badge.v { background: var(--ok-bg); color: var(--ok); }
+.cr-badge.o { background: var(--warn-bg); color: var(--warn); }
+.cr-badge.nv { background: var(--err-bg); color: var(--err); }
+
+.btn-row {
+  display: flex; gap: 8px; margin-top: 1.5rem;
+  flex-wrap: wrap; align-items: center;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 20px; border-radius: var(--r);
+  border: 1px solid var(--border); font-family: inherit;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: all .15s; background: var(--card); color: var(--text);
+}
+.btn:hover { background: var(--bg); border-color: #c5cad5; }
+.btn.primary {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+  box-shadow: 0 1px 4px rgba(0,138,209,.25);
+}
+.btn.primary:hover { background: var(--accent-dark); }
+.btn:disabled { opacity: .4; cursor: not-allowed; pointer-events: none; }
+
+.result {
+  font-size: 13px; padding: 11px 14px; border-radius: var(--r);
+  margin-top: 1rem; border: 1px solid transparent; display: none;
+}
+.result.ok  { display: block; background: var(--ok-bg);  color: var(--ok);  border-color: #a7e3c3; }
+.result.err { display: block; background: var(--err-bg); color: var(--err); border-color: #f5c2c2; }
+
+.footer { margin-top: 2rem; font-size: 12px; color: var(--text-3); text-align: center; }
+
+@media (max-width: 420px) { .sb, .sh { padding: 1.25rem; } }
+
+.date-dropdowns { display: flex; gap: 8px; }
+.date-dropdowns select { flex: 1; min-width: 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="data:image/webp;base64,UklGRsYFAABXRUJQVlA4ILoFAACwIQCdASpYAFgAPjEWiUOiISETLJTUIAMEoA013e/mf5AbNdzP8lf0z56zZszp5RebP9APcB+L/6rvgP4B/bvUB+n3+8/pPsofsB7gP1m/ID3AOsA/YD2AP2g9Uf/I/rl8DH64/tf8BX7Lf+qmRfU/yT2wDyGfT779+Uv4u6wZ/DP6v+UX5d5xf8c/uH5of4DzAv0nkLf0n+5/lvzNEcXm7f7nkg/Lf7H/uvcD/kn8+/1H91/cP/G///6ovYB6MX69ErnA+myxI99sqcN86j3fQWAZZ5KWF+RdxyaFW/2GupuxAKs/DSF0tKuFcR5e4em/BEXMA7qVjFWy9BztumR92mC7JDbwfGsQCBjxviRjCv7DDb87IAD+8evpAdAuQ6F/Rm4aLW6IT+GXLZXT9NKh/o8uonYkpob8ne9s9aH4LAnp78PVfFSVQMdJvm+fvCn5IX1caI2Kn+AjNiRnkqOh1bCLSLX364JZXkgHxCIqvbLf//4VfbR+kF2QwNgO5D8seaj5saJL0KCkqJ1M/3k+tE7QCVPcRRp1ayNr2OZHsEU0g1L/R9QmnlZKvlOt5fC9yXgf58z6qwfRVNCX9BUSna97txGMYlE8eB7qU/RBeNl31yTNyUzuuj//4kYtXti/owVwYA2mMd84swSWP1P+jeFFceLjonmXOazOOPckyphrpVWqX62pynP2je94xgtsx9/QyF9/EURHO6qB13twdfM7A0u++VEigCfBaVyn5e7OEJlkCDH7kDig98COln5DldhOr1PBuIVICNBBNOn45ECzvG5yw9ZvuxnbN/PLrPojBmfmTAPaqLH5SaImaqkWdvjhOSNjIw+lKfpAbLTEQgfMKcD/hw3AGCt+Huy0glODFL7xfvHdTcb8/33st4FRgvhisbFP1vI2PFVpdGs/jgnOvZHPD3hXVgxcy493u+8Upte5X/Pu7yWi6/pNf5JUEZ2mJAhHgL7WT4w/+Y+/Z4ipZL2STwzpJ8CMWsTnkgIPv7lKbZJAWop1aerV4RWjifM9Y/q6PvILK7GLINOPKejt8R38XWX+Sj7JIujj7XoLCwfKcGGyuZGCkGea17gW3A3OXYgKK/pmQR5vOOQs3Aglh4mLoagvHIwYArgmZiRdpyAnM9woWsesqrvosUOueLZAmyRzgg0ASrGm0mGXLJBLAYJ5xGIBuzlKI663QAidGD7bXCE3+e35fL5r5jjslWubh+7AF0QHlTo1LE2OtWaWal51btFNhMijBFC//oKJuiLJFvWm0ttPn7oFa+uwCRfVEUuCnaTPh+HlO3+z2VzWJXDZLqflzDxFbjV45JKKlCsFWj9xmEXxzg9EKZzYeG035D8MgWfD9adADPzY758umuAgzaKlFj8XyITLZmGOjE1RRamXiAw5D7E4LXyFDq3sPr53dX971F1aDzADgkwzji+4v69cSgearKaR3NZrxV3efTWYhv+jjxWSu5aaVxsI+i27noW58u5g2aK/lUGwftYPvT60mEsJFCnFf4MPVjYVRG4z2P+66HJLwRMmiO2ih4lZk2DqCGP8yANYmQ3+O8t7VbpuE+zmW6GmT9IIR6PyWbpKzQ2kKI6p2duEqb3S/HL5m5Bgq4fBgyzpAnmpSgb+DJQKi+ewp04/9sQIGaJZJETJPPdZkfn0ytViGTE462k0B9qT1QRo87/27c/2bfqeEMzv86/+xvmadMFF5KBeC0S7b9p1wDUJCVe5f/RnKulIZoHcS9JUBKcymGz6BMBGHpXX6N18exmf1gJ61S+k1dxBUn1L//SsZKKTQOHRHVkt7KHOMJy4jwiHuQ/ze1vti3xeeUQVorRZ8PeIo8+APN4grN0zuxjV8VQwIRY/r3qOt9F1cktC0+2HmGc7QN/NI0rBxaJy2pcJnNHdtQFftnR+43Nogf8xx6z0Na4lNyjYPYgJZxwBP2rhHVQpXfBCiAAAAA==" alt="de Fietsboot logo">
+  <div>
+    <h1>de Fietsboot</h1>
+    <p>Beoordeling Vaartraining</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prog"><div class="prog-fill" id="progFill" style="width:25%"></div></div>
+
+  <!-- ── STAP 1 — Trainingsgegevens ── -->
+  <div class="step active" id="step1">
+    <div class="sh">
+      <div class="sh-lbl">Stap 1 van 4</div>
+      <div class="sh-title">Trainingsgegevens</div>
+      <div class="sh-sub">Vul de basisgegevens in van de trainingsvaart</div>
+    </div>
+    <div class="sb">
+
+      <div class="field-grid">
+        <div class="field">
+          <label>Datum training</label>
+          <div class="date-dropdowns" id="datumTraining-wrap">
+            <select id="datumDay">
+              <option value="">Dag</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <select id="datumMonth">
+              <option value="">Maand</option>
+              <option value="01">Januari</option>
+              <option value="02">Februari</option>
+              <option value="03">Maart</option>
+              <option value="04">April</option>
+              <option value="05">Mei</option>
+              <option value="06">Juni</option>
+              <option value="07">Juli</option>
+              <option value="08">Augustus</option>
+              <option value="09">September</option>
+              <option value="10">Oktober</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select id="datumYear">
+              <option value="">Jaar</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Boot</label>
+          <select id="boot">
+            <option value="">— Selecteer boot —</option>
+            <option>FB1 — Vecht</option>
+            <option>FB2 — Loosdrechtse Plassen</option>
+          </select>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div class="section-label">Opleider</div>
+
+      <!-- Opleider -->
+      <div class="field">
+        <label>Naam opleider</label>
+        <select id="naamOpleiderSelect" onchange="onPersonSelect('opleider')">
+          <option value="">— Laden… —</option>
+          <option value="__handmatig__">✏️ Handmatig invoeren…</option>
+        </select>
+      </div>
+      <div id="opleiderHandmatig" style="display:none">
+        <div class="field-grid" style="margin-top:8px">
+          <div class="field">
+            <label>Naam opleider (handmatig)</label>
+            <input type="text" id="naamOpleiderManual" placeholder="Voor- en achternaam">
+          </div>
+          <div class="field">
+            <label>E-mail opleider</label>
+            <input type="email" id="emailOpleiderManual" placeholder="opleider@email.nl">
+          </div>
+        </div>
+      </div>
+      <div id="opleiderEmail" class="field" style="margin-top:8px;display:none">
+        <label>E-mail opleider</label>
+        <input type="email" id="emailOpleider" readonly style="background:#f7f8fa;color:#5a6070">
+      </div>
+
+      <hr class="divider">
+      <div class="section-label">Trainee</div>
+
+      <!-- Trainee -->
+      <div class="field">
+        <label>Naam trainee</label>
+        <select id="naamTraineeSelect" onchange="onPersonSelect('trainee')">
+          <option value="">— Laden… —</option>
+          <option value="__handmatig__">✏️ Handmatig invoeren…</option>
+        </select>
+      </div>
+      <div id="traineeHandmatig" style="display:none">
+        <div class="field-grid" style="margin-top:8px">
+          <div class="field">
+            <label>Naam trainee (handmatig)</label>
+            <input type="text" id="naamTraineeManual" placeholder="Voor- en achternaam">
+          </div>
+          <div class="field">
+            <label>E-mail trainee</label>
+            <input type="email" id="emailTraineeManual" placeholder="trainee@email.nl">
+          </div>
+        </div>
+      </div>
+      <div id="traineeEmail" class="field" style="margin-top:8px;display:none">
+        <label>E-mail trainee</label>
+        <input type="email" id="emailTrainee" readonly style="background:#f7f8fa;color:#5a6070">
+      </div>
+
+      <div class="field">
+        <label>Functie trainee</label>
+        <div class="conclusie-group" style="flex-direction:row;gap:8px">
+          <label class="conclusie-opt" style="flex:1">
+            <input type="radio" name="functie" value="Schipper"> Schipper
+          </label>
+          <label class="conclusie-opt" style="flex:1">
+            <input type="radio" name="functie" value="Gastheer"> Gastheer
+          </label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn primary" id="btn1" onclick="goStep(2)">Volgende →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STAP 2 — Beoordeling Schipper (conditioneel) ── -->
+  <div class="step" id="step2">
+    <div class="sh">
+      <div class="sh-lbl">Stap 2 van 4</div>
+      <div class="sh-title" id="step2Title">Beoordeling vaardigheden</div>
+      <div class="sh-sub">Beoordeel elk criterium: Voldoende / Onvoldoende / Niet van toepassing</div>
+    </div>
+    <div class="sb">
+
+      <!-- Schipper criteria -->
+      <div id="criteriaSchipperSection">
+        <table class="criteria-table" id="criteriaTableSchipper">
+          <thead><tr>
+            <th>Criterium</th>
+            <th>V</th><th>O</th><th>NvT</th>
+          </tr></thead>
+          <tbody id="criteriaBodySchipper"></tbody>
+        </table>
+        <div class="field">
+          <label>Toelichting beoordeling Schipper</label>
+          <textarea id="toelichtingSchipper" placeholder="Optionele toelichting…"></textarea>
+        </div>
+      </div>
+
+      <!-- Gastheer criteria -->
+      <div id="criteriaGastheerSection">
+        <table class="criteria-table" id="criteriaTableGastheer">
+          <thead><tr>
+            <th>Criterium</th>
+            <th>V</th><th>O</th><th>NvT</th>
+          </tr></thead>
+          <tbody id="criteriaBodyGastheer"></tbody>
+        </table>
+        <div class="field">
+          <label>Toelichting beoordeling Gastheer</label>
+          <textarea id="toelichtingGastheer" placeholder="Optionele toelichting…"></textarea>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="goStep(1)">← Terug</button>
+        <button class="btn primary" onclick="goStep(3)">Volgende →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STAP 3 — Aanbeveling ── -->
+  <div class="step" id="step3">
+    <div class="sh">
+      <div class="sh-lbl">Stap 3 van 4</div>
+      <div class="sh-title">Aanbeveling</div>
+    </div>
+    <div class="sb">
+
+      <div class="field">
+        <label>Conclusie aanbeveling</label>
+        <div class="conclusie-group">
+          <label class="conclusie-opt">
+            <input type="radio" name="conclusie" value="Gekwalificeerd — klaar voor inzet">
+            ✅ Gekwalificeerd — klaar voor inzet
+          </label>
+          <label class="conclusie-opt">
+            <input type="radio" name="conclusie" value="Extra training aanbevolen">
+            🔄 Extra training aanbevolen
+          </label>
+          <label class="conclusie-opt">
+            <input type="radio" name="conclusie" value="Nog niet gekwalificeerd">
+            ❌ Nog niet gekwalificeerd
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Toelichting aanbeveling</label>
+        <textarea id="toelichtingAanbeveling" placeholder="Motiveer de aanbeveling…"></textarea>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="goStep(2)">← Terug</button>
+        <button class="btn primary" onclick="goStep(4)">Controleer →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STAP 4 — Preview & PDF ── -->
+  <div class="step" id="step4">
+    <div class="sh">
+      <div class="sh-lbl">Stap 4 van 4</div>
+      <div class="sh-title">Controleer &amp; verzend</div>
+    </div>
+    <div class="sb">
+
+      <div class="preview-panel" id="previewPanel"></div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="goStep(3)">← Terug</button>
+        <button class="btn primary" id="pdfBtn" onclick="generatePDF()">📄 Download PDF</button>
+        <button class="btn primary" id="sendBtn" onclick="sendBeoordeling()" style="background:var(--ok);border-color:var(--ok)">✉ Verzenden</button>
+      </div>
+
+      <div class="result" id="pdfResult"></div>
+      <div class="result" id="sendResult"></div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">de Fietsboot &nbsp;·&nbsp; <a href="mailto:admin@defietsboot.nl" style="color:var(--text-3);text-decoration:none;">admin@defietsboot.nl</a></div>
+
+<script>
+// ── Data ───────────────────────────────────────────────────────────────────
+const CRITERIA = {
+  Schipper: [
+    'Bootbeheersing inclusief achteruit varen',
+    'Aan- en afmeren',
+    'Bekendheid uitrusting boot en techniek',
+    'Bekendheid calamiteitenplan',
+    'Samenwerking met Gastheer',
+    'Overige',
+  ],
+  Gastheer: [
+    'Aan- en afmeren taken tbv landvasten',
+    'Bekendheid calamiteitenplan',
+    'Samenwerking Schipper inclusief 4 ogen bij gebruik checklist',
+    'Diverse',
+  ],
+};
+
+const PROG = ['25%','50%','75%','100%'];
+let currentStep = 1;
+
+// ── Build criteria tables ──────────────────────────────────────────────────
+function buildCriteriaTable(bodyId, criteria, prefix) {
+  const tbody = document.getElementById(bodyId);
+  tbody.innerHTML = '';
+  criteria.forEach((cr, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${i+1}. ${cr}</td>
+      <td style="text-align:center"><input type="radio" name="${prefix}_${i}" value="V"></td>
+      <td style="text-align:center"><input type="radio" name="${prefix}_${i}" value="O"></td>
+      <td style="text-align:center"><input type="radio" name="${prefix}_${i}" value="NvT"></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+buildCriteriaTable('criteriaBodySchipper', CRITERIA.Schipper, 'sch');
+buildCriteriaTable('criteriaBodyGastheer', CRITERIA.Gastheer, 'gas');
+
+// ── Step navigation ────────────────────────────────────────────────────────
+function goStep(n) {
+  // Validate step 1
+  if (n > 1 && currentStep === 1) {
+    const functie = document.querySelector('input[name="functie"]:checked');
+    if (!getDatum() ||
+        !getNaam('opleider') ||
+        !getNaam('trainee') ||
+        !functie) {
+      showResult('', 'err', 'Vul alle verplichte velden in en selecteer een functie.');
+      // Show inline error
+      const err = document.createElement('div');
+      err.className = 'result err';
+      err.textContent = 'Vul alle verplichte velden in en selecteer een functie.';
+      err.id = 'step1err';
+      const existing = document.getElementById('step1err');
+      if (existing) existing.remove();
+      document.querySelector('#step1 .btn-row').before(err);
+      return;
+    }
+    document.getElementById('step1err')?.remove();
+    applyFunctie();
+  }
+
+  if (n === 4) buildPreview();
+
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step' + currentStep).classList.add('active');
+  document.getElementById('progFill').style.width = PROG[n - 1];
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Show/hide criteria based on functie ───────────────────────────────────
+function applyFunctie() {
+  const functie = document.querySelector('input[name="functie"]:checked')?.value;
+  document.getElementById('criteriaSchipperSection').style.display =
+    functie === 'Schipper' ? 'block' : 'none';
+  document.getElementById('criteriaGastheerSection').style.display =
+    functie === 'Gastheer' ? 'block' : 'none';
+  document.getElementById('step2Title').textContent =
+    `Beoordeling ${functie || 'vaardigheden'}`;
+}
+
+// ── Get criteria scores ────────────────────────────────────────────────────
+function getScores(prefix, criteria) {
+  return criteria.map((cr, i) => {
+    const val = document.querySelector(`input[name="${prefix}_${i}"]:checked`)?.value || '—';
+    return { label: cr, score: val };
+  });
+}
+
+// ── Build preview ─────────────────────────────────────────────────────────
+function buildPreview() {
+  const functie  = document.querySelector('input[name="functie"]:checked')?.value || '';
+  const conclusie = document.querySelector('input[name="conclusie"]:checked')?.value || '—';
+  const datum    = getDatum();
+  const datumNl  = datum ? datum.split('-').reverse().join('-') : '—';
+  const scores   = functie === 'Schipper'
+    ? getScores('sch', CRITERIA.Schipper)
+    : getScores('gas', CRITERIA.Gastheer);
+  const toelichting = functie === 'Schipper'
+    ? document.getElementById('toelichtingSchipper').value
+    : document.getElementById('toelichtingGastheer').value;
+
+  const badgeClass = (s) => s === 'V' ? 'v' : s === 'O' ? 'o' : 'nv';
+  const badgeLabel = (s) => s === 'V' ? 'Voldoende' : s === 'O' ? 'Onvoldoende' : s === 'NvT' ? 'NvT' : '—';
+
+  const crRows = scores.map(s => `
+    <div class="cr-row">
+      <span>${s.label}</span>
+      <span class="cr-badge ${badgeClass(s.score)}">${badgeLabel(s.score)}</span>
+    </div>`).join('');
+
+  document.getElementById('previewPanel').innerHTML = `
+    <h3>Trainingsgegevens</h3>
+    <div class="preview-row"><span class="lbl">Datum training</span><span class="val">${datumNl}</span></div>
+    <div class="preview-row"><span class="lbl">Boot</span><span class="val">${document.getElementById('boot').value || '—'}</span></div>
+    <div class="preview-row"><span class="lbl">Opleider</span><span class="val">${getNaam('opleider')}</span></div>
+    <div class="preview-row"><span class="lbl">E-mail opleider</span><span class="val">${getEmail('opleider') || '—'}</span></div>
+    <div class="preview-row"><span class="lbl">Trainee</span><span class="val">${getNaam('trainee')}</span></div>
+    <div class="preview-row"><span class="lbl">E-mail trainee</span><span class="val">${getEmail('trainee') || '—'}</span></div>
+    <div class="preview-row"><span class="lbl">Functie</span><span class="val">${functie}</span></div>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:1rem 0">
+    <h3>Beoordeling ${functie}</h3>
+    <div class="preview-criteria">${crRows}</div>
+    ${toelichting ? `<div style="margin-top:.75rem;font-size:13px;color:var(--text-2)">Toelichting: ${toelichting}</div>` : ''}
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:1rem 0">
+    <h3>Aanbeveling</h3>
+    <div class="preview-row"><span class="lbl">Conclusie</span><span class="val">${conclusie}</span></div>
+    ${document.getElementById('toelichtingAanbeveling').value
+      ? `<div class="preview-row"><span class="lbl">Toelichting</span><span class="val">${document.getElementById('toelichtingAanbeveling').value}</span></div>`
+      : ''}
+  `;
+}
+
+// ── Generate PDF ───────────────────────────────────────────────────────────
+function generatePDF() {
+  const functie = document.querySelector('input[name="functie"]:checked')?.value || '';
+  const conclusie = document.querySelector('input[name="conclusie"]:checked')?.value || '';
+  const datum = getDatum();
+  const scores = functie === 'Schipper'
+    ? getScores('sch', CRITERIA.Schipper)
+    : getScores('gas', CRITERIA.Gastheer);
+  const toelichting = functie === 'Schipper'
+    ? document.getElementById('toelichtingSchipper').value
+    : document.getElementById('toelichtingGastheer').value;
+
+  const payload = {
+    datum_training:       datum,
+    naam_opleider:        getNaam('opleider'),
+    email_opleider:       getEmail('opleider'),
+    naam_trainee:         getNaam('trainee'),
+    email_trainee:        getEmail('trainee'),
+    boot:                 document.getElementById('boot').value,
+    functie:              functie,
+    scores:               scores,
+    toelichting:          toelichting,
+    conclusie:            conclusie,
+    toelichting_aanbeveling: document.getElementById('toelichtingAanbeveling').value,
+  };
+
+  const btn = document.getElementById('pdfBtn');
+  btn.disabled = true;
+  btn.textContent = 'Genereren…';
+
+  fetch('/api/generate-pdf', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(r => {
+    if (!r.ok) throw new Error('Server fout');
+    return r.blob();
+  })
+  .then(blob => {
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    const name = `Beoordeling_${functie}_${datum}_${getNaam('trainee').replace(/ /g,'_')}.pdf`;
+    a.href = url; a.download = name; a.click();
+    URL.revokeObjectURL(url);
+    const el = document.getElementById('pdfResult');
+    el.className = 'result ok';
+    el.textContent = '✓ PDF gegenereerd en gedownload.';
+  })
+  .catch(() => {
+    const el = document.getElementById('pdfResult');
+    el.className = 'result err';
+    el.textContent = 'PDF genereren mislukt. Controleer de server.';
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = '📄 Download PDF';
+  });
+}
+
+function showResult(id, type, msg) {
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (el) { el.className = 'result ' + type; el.textContent = msg; }
+}
+
+// ── Verzenden ──────────────────────────────────────────────────────────────
+function sendBeoordeling() {
+  const functie   = document.querySelector('input[name="functie"]:checked')?.value || '';
+  const conclusie = document.querySelector('input[name="conclusie"]:checked')?.value || '';
+  const datum     = getDatum();
+  const scores    = functie === 'Schipper'
+    ? getScores('sch', CRITERIA.Schipper)
+    : getScores('gas', CRITERIA.Gastheer);
+  const toelichting = functie === 'Schipper'
+    ? document.getElementById('toelichtingSchipper').value
+    : document.getElementById('toelichtingGastheer').value;
+
+  const payload = {
+    datum_training:          datum,
+    naam_opleider:           getNaam('opleider'),
+    email_opleider:          getEmail('opleider'),
+    naam_trainee:            getNaam('trainee'),
+    email_trainee:           getEmail('trainee'),
+    boot:                    document.getElementById('boot').value,
+    functie,
+    scores,
+    toelichting,
+    conclusie,
+    toelichting_aanbeveling: document.getElementById('toelichtingAanbeveling').value,
+  };
+
+  const btn = document.getElementById('sendBtn');
+  btn.disabled = true;
+  btn.textContent = 'Verzenden…';
+
+  fetch('/api/send-beoordeling', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.json())
+  .then(d => {
+    const el = document.getElementById('sendResult');
+    if (d.ok) {
+      el.className = 'result ok';
+      el.textContent = '✓ ' + d.message;
+    } else {
+      el.className = 'result err';
+      el.textContent = '✗ ' + (d.error || 'Verzenden mislukt.');
+    }
+  })
+  .catch(() => {
+    const el = document.getElementById('sendResult');
+    el.className = 'result err';
+    el.textContent = 'Verbindingsfout. Controleer de server.';
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = '✉ Verzenden';
+  });
+}
+
+// Init: hide criteria sections until functie is chosen
+applyFunctie();
+
+// ── Date helper — reads three dropdowns, returns yyyy-mm-dd ───────────────
+function getDatum() {
+  const d = document.getElementById('datumDay').value;
+  const m = document.getElementById('datumMonth').value;
+  const y = document.getElementById('datumYear').value;
+  if (!d || !m || !y) return '';
+  return y + '-' + m + '-' + d;
+}
+
+// ── Personen dropdown helpers ──────────────────────────────────────────────
+
+let _personen = [];
+
+async function laadPersonen() {
+  try {
+    const res  = await fetch('/api/get-personen');
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error);
+    _personen = data.personen;
+    ['naamOpleiderSelect', 'naamTraineeSelect'].forEach(id => {
+      const sel = document.getElementById(id);
+      sel.innerHTML = '<option value="">— Selecteer persoon —</option>' +
+        '<option value="__handmatig__">✏️ Handmatig invoeren…</option>' +
+        _personen.map(p =>
+          `<option value="${p.label}" data-email="${p.email}">${p.label}</option>`
+        ).join('');
+    });
+  } catch (err) {
+    console.warn('Personen laden mislukt:', err.message);
+    ['naamOpleiderSelect', 'naamTraineeSelect'].forEach(id => {
+      const sel = document.getElementById(id);
+      sel.innerHTML = '<option value="">— Laden mislukt —</option>' +
+        '<option value="__handmatig__">✏️ Handmatig invoeren…</option>';
+    });
+  }
+}
+
+function onPersonSelect(role) {
+  const sel       = document.getElementById(role === 'opleider' ? 'naamOpleiderSelect' : 'naamTraineeSelect');
+  const handmatig = document.getElementById(role === 'opleider' ? 'opleiderHandmatig'  : 'traineeHandmatig');
+  const emailDiv  = document.getElementById(role === 'opleider' ? 'opleiderEmail'       : 'traineeEmail');
+  const emailFld  = document.getElementById(role === 'opleider' ? 'emailOpleider'       : 'emailTrainee');
+
+  if (sel.value === '__handmatig__') {
+    handmatig.style.display = '';
+    emailDiv.style.display  = 'none';
+  } else if (sel.value) {
+    handmatig.style.display = 'none';
+    const opt   = sel.options[sel.selectedIndex];
+    emailFld.value         = opt.dataset.email || '';
+    emailDiv.style.display = '';
+  } else {
+    handmatig.style.display = 'none';
+    emailDiv.style.display  = 'none';
+  }
+}
+
+function getNaam(role) {
+  const sel = document.getElementById(role === 'opleider' ? 'naamOpleiderSelect' : 'naamTraineeSelect');
+  if (sel.value === '__handmatig__') {
+    return document.getElementById(role === 'opleider' ? 'naamOpleiderManual' : 'naamTraineeManual').value.trim();
+  }
+  return sel.value.trim();
+}
+
+function getEmail(role) {
+  const sel = document.getElementById(role === 'opleider' ? 'naamOpleiderSelect' : 'naamTraineeSelect');
+  if (sel.value === '__handmatig__') {
+    return document.getElementById(role === 'opleider' ? 'emailOpleiderManual' : 'emailTraineeManual').value.trim();
+  }
+  return document.getElementById(role === 'opleider' ? 'emailOpleider' : 'emailTrainee').value.trim();
+}
+
+// Load personen on page load
+laadPersonen();
+
+</script>
+</body>
+</html>
